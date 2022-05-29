@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
  <!-- Latest compiled and minified CSS -->
@@ -8,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home Title</title>
+<title>Books Title</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -40,8 +42,36 @@
             </div>
         </div>
         <div class="col py-3">
-            <p>Welcome to the home of virtual library.</p>
-            <p>Here you'll be able to add books to your library and see some statistics about them.</p>
+            <h3>Here you can see the list of books.</h3>
+            <table class="table table-bordered">
+				<thead>
+		      		<tr>
+				        <th>Name</th>
+				        <th>Number of pages</th>
+				        <th>Finish date</th>
+				        <th>Authors</th>
+		      		</tr>
+		    	</thead>
+		    	<tbody>
+	            <c:forEach items="${books}" var="book">
+	            	<tr>
+	            		<td><c:out value="${book.name}"></c:out></td>
+	            		<td><c:out value="${book.numberOfPages}"></c:out></td>
+	            		<td>
+	            			<c:choose>
+							    <c:when test="${empty book.finishDate}">
+							        Not read yet.
+							    </c:when>
+							    <c:otherwise>
+							        <fmt:formatDate value="${book.finishDate}" pattern="yyyy-MM-dd"/>
+							    </c:otherwise>
+							</c:choose>
+	            		</td>
+	            		<td><c:out value="${book.authorsString}"></c:out></td>
+	            	</tr>
+	            </c:forEach>
+	            </tbody>
+            </table>
         </div>
     </div>
 </div>

@@ -9,4 +9,34 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>HomeServlet</display-name>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>servlets.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/HomeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AuthorServlet</display-name>
+    <servlet-name>AuthorServlet</servlet-name>
+    <servlet-class>servlets.AuthorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthorServlet</servlet-name>
+    <url-pattern>/AuthorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BookServlet</display-name>
+    <servlet-name>BookServlet</servlet-name>
+    <servlet-class>servlets.BookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookServlet</servlet-name>
+    <url-pattern>/BookServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -68,21 +68,34 @@ public class AuthorBookDAO {
 		return true;
 	}
 	
-	public static List<Book> getBooksFromAuthor(String authorName) {
-		return getBooksFromAuthor(AuthorDAO.getAuthorByName(authorName));
+	public static List<Book> getBooksByAuthor(String authorName) {
+		return getBooksByAuthor(AuthorDAO.getAuthorByName(authorName));
 	}
 	
 	@SuppressWarnings({ "unchecked", "deprecation" })
-	public static List<Book> getBooksFromAuthor(Author author) {
+	public static List<Book> getBooksByAuthor(Author author) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Query query = session.createQuery("from AuthorBook ab where ab.author = :author");
 		query.setParameter("author", author);
 		List<AuthorBook> list = query.getResultList();
 		session.close();
-		List<Book> books = new ArrayList<Book>();
+		List<Book> books = new ArrayList<>();
 		for(AuthorBook ab: list)
 			books.add(ab.getBook());
 		return books;
+	}
+	
+	@SuppressWarnings({ "unchecked", "deprecation" })
+	public static List<Author> getAuthorsByBook(Book book) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Query query = session.createQuery("from AuthorBook ab where ab.book = :book");
+		query.setParameter("book", book);
+		List<AuthorBook> list = query.getResultList();
+		session.close();
+		List<Author> authors = new ArrayList<>();
+		for(AuthorBook ab: list)
+			authors.add(ab.getAuthor());
+		return authors;
 	}
 	
 	@SuppressWarnings({ "unchecked", "deprecation" })

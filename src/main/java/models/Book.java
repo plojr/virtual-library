@@ -1,6 +1,7 @@
 package models;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import utils.DateConverter;
 
 @Entity
@@ -26,6 +28,9 @@ public class Book {
 	
 	@Column(name="finish_date")
 	private Date finishDate;
+	
+	@Transient
+	private List<Author> authors;
 	
 	public Book() {
 		this.id = 0;
@@ -72,15 +77,33 @@ public class Book {
 		this.numberOfPages = numberOfPages;
 	}
 	
-	public Date getDate() {
+	public Date getFinishDate() {
 		return finishDate;
 	}
-	public void setDate(Date date) {
+	public void setFinishDate(Date date) {
 		this.finishDate = date;
 	}
+	
+	public List<Author> getAuthors() {
+		return authors;
+	}
+	
+	public String getAuthorsString() {
+		StringBuffer sb = new StringBuffer();
+		for(Author author: authors)
+			sb.append(author.getName() + ", ");
+		if(authors.size() == 0)
+			return "-";
+		return sb.toString().substring(0, sb.length()-2);
+	}
+	
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
+	}
+	
 	@Override
 	public String toString() {
-		String finishDateText = (finishDate == null ? "Not read yet" : DateConverter.convertDateToString(getDate()));
+		String finishDateText = (finishDate == null ? "Not read yet" : DateConverter.convertDateToString(getFinishDate()));
 		return "Books [id=" + id + ", name=" + name + ", numberOfPages=" + numberOfPages + ", date=" + finishDateText + "]";
 	}
 	

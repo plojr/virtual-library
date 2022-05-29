@@ -11,6 +11,7 @@ import utils.HibernateUtil;
 
 public class BookDAO {
 	
+	@SuppressWarnings("deprecation")
 	public static boolean update(Book book) {
 		Session session = null;
 		Transaction transaction = null;
@@ -49,17 +50,18 @@ public class BookDAO {
 		return book.getId();
 	}
 	
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "unchecked", "deprecation" })
 	public static Book getBookByName(String bookName) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			Query query = session.createQuery("from Book book where book.name = :name");
 			query.setParameter("name", bookName);
-			@SuppressWarnings("unchecked")
 			List<Book> books = query.getResultList();
 			if(books.size() != 0) {
 				session.close();
-				return books.get(0);
+				Book book = books.get(0);
+				book.setAuthors(AuthorBookDAO.getAuthorsByBook(book));
+				return book;
 			}
     	}
     	catch(Exception e) {
@@ -71,13 +73,15 @@ public class BookDAO {
     	return null;
 	}
 	
+	@SuppressWarnings({ "unchecked", "deprecation" })
 	public static List<Book> getBooks() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
     	try {
-			@SuppressWarnings({ "unchecked", "deprecation" })
 			List<Book> books = session.createQuery("from Book").list();
     		if(books.size() != 0) {
 	    		session.close();
+	    		for(Book book: books)
+	    			book.setAuthors(AuthorBookDAO.getAuthorsByBook(book));
 	    		return books;
     		}
     	}

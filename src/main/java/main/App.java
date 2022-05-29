@@ -16,6 +16,7 @@ public class App {
     	for(Author localAuthor: authors)
     		System.out.println(localAuthor);
     	
+    	
     	/*
     	List<Book> books = BookDAO.getBooks();
     	for(Book book: books)

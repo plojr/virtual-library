@@ -78,9 +78,7 @@ public class AuthorDAO {
 	
 	@SuppressWarnings({ "unchecked", "deprecation" })
 	public static List<Author> getAuthors() {
-		System.out.println("before");
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		System.out.println("after");
     	try {
     		List<Author> authors = session.createQuery("from Author").list();
     		session.close();

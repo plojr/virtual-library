@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
  <!-- Latest compiled and minified CSS -->
@@ -8,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home Title</title>
+<title>Authors Title</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -40,8 +41,19 @@
             </div>
         </div>
         <div class="col py-3">
-            <p>Welcome to the home of virtual library.</p>
-            <p>Here you'll be able to add books to your library and see some statistics about them.</p>
+            <h3>Here you can see the list of authors by name.</h3>
+            <table class="table table-bordered">
+				<thead>
+		      		<tr>
+				        <th>Name</th>
+		      		</tr>
+		    	</thead>
+		    	<tbody>
+	            <c:forEach items="${authors}" var="author">
+	            	<tr><td><c:out value="${author.name}"></c:out></td></tr>
+	            </c:forEach>
+	            </tbody>
+            </table>
         </div>
     </div>
 </div>
