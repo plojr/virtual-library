@@ -9,7 +9,7 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  <servlet>
+  <!-- servlet>
     <description></description>
     <display-name>HomeServlet</display-name>
     <servlet-name>HomeServlet</servlet-name>
@@ -38,5 +38,5 @@
   <servlet-mapping>
     <servlet-name>BookServlet</servlet-name>
     <url-pattern>/BookServlet</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping-->
 </web-app>
