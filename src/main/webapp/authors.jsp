@@ -8,15 +8,15 @@
 		<jsp:include page="sidebar.jsp" />
         <div class="col py-3">
             <h3>Here you can see the list of authors by name.</h3>
-            <table class="table table-bordered">
+            <table class="table">
 				<thead>
-		      		<tr>
-				        <th>Name</th>
+		      		<tr class="d-flex">
+		      			<th class="col-sm-2">Name</th>
 		      		</tr>
 		    	</thead>
 		    	<tbody>
 	            <c:forEach items="${authors}" var="author">
-	            	<tr><td><c:out value="${author.name}"></c:out></td></tr>
+	            	<tr class="d-flex"><td class="col-sm-2"><c:out value="${author.name}"></c:out></td></tr>
 	            </c:forEach>
 	            </tbody>
             </table>
