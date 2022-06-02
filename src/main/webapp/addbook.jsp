@@ -5,13 +5,17 @@
 <script type="text/javascript">
 var index = 0;
 function add() {
-	var author = document.createElement("input");
-	author.setAttribute("type", "text");
-	author.setAttribute("name", "author" + index);
-	author.setAttribute("class", "form-control");
-	author.setAttribute("placeholder", "Enter author's name");
+	var authorLabel = document.createElement("label");
+	authorLabel.setAttribute("for", "author" + index);
+	var authorElement = document.createElement("input");
+	authorElement.setAttribute("type", "text");
+	authorElement.setAttribute("name", "author" + index);
+	authorElement.setAttribute("id", "author" + index);
+	authorElement.setAttribute("class", "form-control");
+	authorElement.setAttribute("placeholder", "Enter author's name");
 	var spanvar = document.getElementById("authors");
-	spanvar.appendChild(author);
+	spanvar.appendChild(authorLabel);
+	spanvar.appendChild(authorElement);
 	index = index + 1;
 	var sizeElement = document.getElementById("numberOfAuthors");
 	sizeElement.value = index;
@@ -26,7 +30,7 @@ function add() {
 			<form method="post" action="add_book">
 			  <div class="form-group">
 			    <label for="inputName">Book's name</label>
-			    <input type="text" name="name" class="form-control" id="inputBook" placeholder="Enter book's name" required>
+			    <input type="text" name="name" class="form-control" id="inputName" placeholder="Enter book's name" required>
 			  </div>
 			  <div class="form-group">
 			    <label for="inputNumberOfPages">Number of pages</label>
