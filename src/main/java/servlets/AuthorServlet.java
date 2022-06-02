@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import models.Author;
 
+// This class needs this @WebServlet annotation beucase there is no mention of its path in the web.xml file.
+
 @WebServlet("/authors")
 public class AuthorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

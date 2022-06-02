@@ -1,9 +1,12 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import dao.AuthorDAO;
-import models.Author;
+import dao.AuthorBookDAO;
+import dao.BookDAO;
+import models.Book;
+import utils.DateConverter;
 
 public class App {
     public static void main( String[] args ) {
@@ -11,13 +14,13 @@ public class App {
     	Author author = AuthorDAO.getAuthorByName("Donald Knuth");
     	System.out.println(author);
     	
-    	*/
+    	
     	List<Author> authors = AuthorDAO.getAuthors();
     	for(Author localAuthor: authors)
     		System.out.println(localAuthor);
     	
     	
-    	/*
+    	
     	List<Book> books = BookDAO.getBooks();
     	for(Book book: books)
     		System.out.println(book);
@@ -39,19 +42,19 @@ public class App {
     	
     	int idBook = BookDAO.save(new Book("Fake book v.6", 100, null));
     	System.out.println(idBook);
-    	
+    	*/
     	
     	String name1 = "Pedro a";
     	String name2 = "Pedro b";
-    	String name3 = "Pedro c";
-    	String bookName = "Fake book v.d";
+    	String name3 = "Pedro d";
+    	String bookName = "Fake book v.z";
     	List<String> names = new ArrayList<String>();
     	names.add(name1);
     	names.add(name2);
     	names.add(name3);
     	boolean save = AuthorBookDAO.save(names, bookName);
     	System.out.println(save);
-    	*/
+    	
     	/*
     	String bookName2 = "Fake book v.d";
     	Book book = BookDAO.getBookByName(bookName2);

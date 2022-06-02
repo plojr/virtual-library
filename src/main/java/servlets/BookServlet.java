@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import models.Book;
 
+//This class needs this @WebServlet annotation beucase there is no mention of its path in the web.xml file.
 @WebServlet("/books")
 public class BookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

@@ -22,8 +22,16 @@ public class AuthorBookDAO {
 			transaction = session.beginTransaction();
 			session.persist(book);
 			for(Author author: authors) {
-				session.persist(author);
-				AuthorBook authorBook = new AuthorBook(author, book);
+				AuthorBook authorBook = null;
+				Author checkAuthor = AuthorDAO.getAuthorByName(author.getName());
+				// Check if there is already an author with this name in the database.
+				if(checkAuthor != null) {
+					authorBook = new AuthorBook(checkAuthor, book);
+				}
+				else { // If there isn't, then persist it first
+					session.persist(author);
+					authorBook = new AuthorBook(author, book);
+				}
 				session.persist(authorBook);
 			}
 			transaction.commit();
@@ -49,9 +57,17 @@ public class AuthorBookDAO {
 			Book book = new Book(bookName, 100);
 			session.persist(book);
 			for(String name: authorNames) {
-				Author author = new Author(name);
-				session.persist(author);
-				AuthorBook authorBook = new AuthorBook(author, book);
+				AuthorBook authorBook = null;
+				Author checkAuthor = AuthorDAO.getAuthorByName(name);
+				// Check if there is already an author with this name in the database.
+				if(checkAuthor != null) {
+					authorBook = new AuthorBook(checkAuthor, book);
+				}
+				else { // If there isn't, then persist it first
+					Author author = new Author(name);
+					session.persist(author);
+					authorBook = new AuthorBook(author, book);
+				}
 				session.persist(authorBook);
 			}
 			transaction.commit();

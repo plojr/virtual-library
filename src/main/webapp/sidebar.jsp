@@ -18,8 +18,8 @@
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Books</span></a>
                     </li>
                     <li>
-                        <a href="add_books" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Add books</span> </a>
+                        <a href="add_book" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Add book</span> </a>
                     </li>
                 </ul>
             </div>

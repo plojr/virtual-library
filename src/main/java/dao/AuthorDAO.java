@@ -11,6 +11,7 @@ import utils.HibernateUtil;
 
 public class AuthorDAO {
 	
+	@SuppressWarnings("deprecation")
 	public static boolean update(String name) {
 		Author author = getAuthorByName(name);
 		Session session = null;
