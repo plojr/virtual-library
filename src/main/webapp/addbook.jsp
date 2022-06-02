@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="header.jsp" />
-<title>Add Book Title</title>
+<title>Add a Book</title>
 </head>
 <script type="text/javascript">
 var index = 0;
@@ -34,7 +34,7 @@ function add() {
 			  </div>
 			  <div class="form-group">
 			    <label for="inputNumberOfPages">Number of pages</label>
-			    <input type="number" name="numberOfPages" class="form-control" id="inputNumberOfPages" placeholder="Enter the number of pages" required>
+			    <input type="number" name="numberOfPages" min="1" class="form-control" id="inputNumberOfPages" placeholder="Enter the number of pages" required>
 			  </div>
 			  <div class="form-group">
 			    <label for="inputFinishDate">Finish date</label>

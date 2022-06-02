@@ -19,7 +19,11 @@
                     </li>
                     <li>
                         <a href="add_book" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Add book</span> </a>
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Add a book</span> </a>
+                    </li>
+                    <li>
+                        <a href="assign_finish_date" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Assign finish date</span> </a>
                     </li>
                 </ul>
             </div>

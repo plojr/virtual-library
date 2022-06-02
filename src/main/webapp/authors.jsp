@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <jsp:include page="header.jsp" />
-<title>Authors Title</title>
+<title>Authors</title>
 </head>
 <body>
 <div class="container-fluid">

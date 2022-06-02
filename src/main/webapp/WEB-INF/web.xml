@@ -11,12 +11,22 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>AddBook</display-name>
-    <servlet-name>AddBook</servlet-name>
-    <servlet-class>servlets.AddBook</servlet-class>
+    <display-name>AddBookServlet</display-name>
+    <servlet-name>AddBookServlet</servlet-name>
+    <servlet-class>servlets.AddBookServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AddBook</servlet-name>
+    <servlet-name>AddBookServlet</servlet-name>
     <url-pattern>/add_book</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FinishDateServlet</display-name>
+    <servlet-name>FinishDateServlet</servlet-name>
+    <servlet-class>servlets.FinishDateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FinishDateServlet</servlet-name>
+    <url-pattern>/assign_finish_date</url-pattern>
   </servlet-mapping>
 </web-app>

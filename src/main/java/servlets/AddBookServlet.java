@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 import dao.AuthorBookDAO;
-import dao.BookDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,10 +16,10 @@ import models.Author;
 import models.Book;
 
 //This class doesn't need the @WebServlet annotation because its path is in the web.xml file.
-public class AddBook extends HttpServlet {
+public class AddBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public AddBook() {
+    public AddBookServlet() {
         super();
     }
 
