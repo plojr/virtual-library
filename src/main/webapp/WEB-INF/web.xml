@@ -29,4 +29,14 @@
     <servlet-name>FinishDateServlet</servlet-name>
     <url-pattern>/assign_finish_date</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StatisticsServlet</display-name>
+    <servlet-name>StatisticsServlet</servlet-name>
+    <servlet-class>servlets.StatisticsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatisticsServlet</servlet-name>
+    <url-pattern>/statistics</url-pattern>
+  </servlet-mapping>
 </web-app>

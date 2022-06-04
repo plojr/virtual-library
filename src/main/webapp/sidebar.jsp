@@ -25,6 +25,10 @@
                         <a href="assign_finish_date" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Assign finish date</span> </a>
                     </li>
+                    <li>
+                        <a href="statistics" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Statistics</span> </a>
+                    </li>
                 </ul>
             </div>
         </div>
