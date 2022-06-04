@@ -20,6 +20,8 @@ public class StatisticsServlet extends HttpServlet {
 		request.setAttribute("totalNumber", stats.getTotalNumberOfReadBooks());
 		request.setAttribute("booksByYear", stats.getNumberOfReadBooksByYear());
 		request.setAttribute("booksByMonthYear", stats.getNumberOfReadBooksByMonthYear());
+		request.setAttribute("pagesByYear", stats.getNumberOfReadPagesByYear());
+		request.setAttribute("pagesByMonthYear", stats.getNumberOfReadPagesByMonthYear());
 		request.getRequestDispatcher("statistics.jsp").forward(request, response);
 	}
 
