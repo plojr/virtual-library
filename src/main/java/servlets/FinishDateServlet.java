@@ -44,7 +44,6 @@ public class FinishDateServlet extends HttpServlet {
 					System.out.println("Not read yet");
 				}
 				Book book = new Book(id, name, numberOfPages, date);
-				System.out.println(book);
 				BookDAO.update(book);
 			}
 		} catch(Exception e) {
