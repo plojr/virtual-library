@@ -52,6 +52,7 @@ public class StatisticsUtil {
 		        int year1 = Integer.parseInt(monthYear1[1]);
 		        int month2 = DateUtils.convertMonthNameToInt(monthYear2[0]);
 		        int year2 = Integer.parseInt(monthYear2[1]);
+		        // Sort by year first, then by month (both by descending order).
 		        if(year1 > year2) return -1;
 		        if(year1 < year2) return 1;
 		        if(month1 > month2) return -1;
