@@ -45,6 +45,7 @@ public class FinishDateServlet extends HttpServlet {
 				}
 				Book book = new Book(id, name, numberOfPages, date);
 				System.out.println(book);
+				BookDAO.update(book);
 			}
 		} catch(Exception e) {
 			System.out.println("Error on assigning a finish date. Reason: " + e.getMessage());
