@@ -10,7 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
-import utils.DateConverter;
+import utils.DateUtils;
 
 @Entity
 @Table(name= "books")
@@ -103,7 +103,7 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		String finishDateText = (finishDate == null ? "Not read yet" : DateConverter.convertDateToString(getFinishDate()));
+		String finishDateText = (finishDate == null ? "Not read yet" : DateUtils.convertDateToString(getFinishDate()));
 		return "Books [id=" + id + ", name=" + name + ", numberOfPages=" + numberOfPages + ", date=" + finishDateText + "]";
 	}
 	

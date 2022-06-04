@@ -18,6 +18,8 @@ public class StatisticsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		StatisticsUtil stats = new StatisticsUtil();
 		request.setAttribute("totalNumber", stats.getTotalNumberOfReadBooks());
+		request.setAttribute("booksByYear", stats.getNumberOfReadBooksByYear());
+		request.setAttribute("booksByMonthYear", stats.getNumberOfReadBooksByMonthYear());
 		request.getRequestDispatcher("statistics.jsp").forward(request, response);
 	}
 

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.AuthorBookDAO;
-import dao.BookDAO;
-import models.Book;
-import utils.DateConverter;
 
 public class App {
     public static void main( String[] args ) {
