@@ -1,5 +1,8 @@
 # Virtual Library
 
+## Status
+Not finished yet.
+
 This project is for learning purposes only.
 
 It’s a very simple web application, like www.skoob.com.br, where you can add the basic information (the number of pages and the date you finish reading the book) about the books you’ve already read and/or you want to.
